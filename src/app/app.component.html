@@ -383,18 +383,10 @@
                 #uploader
             ></app-upload-image>
 
-            <button mat-mini-fab
-                [color]="isEditingImages ? 'accent' : 'primary'"
-                [matTooltip]="isEditingImages ? '' : 'Toggle image management mode'"
-                matTooltipPosition="below"
-                style="margin-right: 24px;margin-left: 24px"
-                (click)="toggleImageEditing(uploader)"
-            >
-                <mat-icon>image</mat-icon>
-            </button>
+         
 
             <app-export [path]="rawPath" [name]="pathName || '' " style="margin-right: 8px"></app-export>
-            <app-share [path]="rawPath"></app-share>
+        
         </div>
         <div class="scene-bottom-actions">
             <button
@@ -477,14 +469,7 @@
 </div>
 
 
-<div *ngIf="isLeftPanelOpened"  class="footer">
-    <a href="https://github.com/Yqnn/svg-path-editor" target="_blank">
-        <mat-icon svgIcon="github"></mat-icon> GitHub
-    </a>
-    <a href="https://github.com/sponsors/Yqnn" target="_blank">
-        <mat-icon svgIcon="sponsor" class="sponsor"></mat-icon> Sponsor
-    </a>
-</div>
+
 
 <app-import (importPath)="openPath($event, '')"></app-import>
 
