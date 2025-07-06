@@ -12,40 +12,6 @@
 <link rel="stylesheet" href="styles.a4c2c16033803e20.css" media="print" onload="this.media='all'">
 
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/javedblch/svg-path-editor@latest/dist--/svg-path-editor/styles.a4c2c16033803e20.css"></noscript></head>
-
-
-<style>
-
-.left-column {
-display:none;
-
-}
-
-
-.left-column-wrapper {
-display:none;
-}
-
-
-.footer {
-display:none;
-}
-
-.scene-bottom-actions {
-display:none;
-}
-
-.grid {
-display:none;
-}
-
-.mat-mdc-button-base {
-display:none;
-}
-
-
-</style>
-
 <body>
   <app-root></app-root>
   
@@ -53,46 +19,5 @@ display:none;
 
 </script><script src="https://cdn.jsdelivr.net/gh/javedblch/svg-path-editor@latest/dist--/svg-path-editor/polyfills.8b39c005062fd761.js" ></script>
 
-<script src="https://cdn.jsdelivr.net/gh/javedblch/svg-path-editor@latest/dist--/svg-path-editor/main.df74626633cdb224.js"></script>
-
-
-<script>
-
-// 1. Get the button by tooltip
-const btn = document.querySelector('button[mattooltip="Download as SVG"]');
-
-if (btn) {
-  btn.addEventListener('click', function () {
-    // 2. Get the specific SVG (with `app-canvas` attribute)
-    const svg = document.querySelector('svg[app-canvas]');
-
-    if (svg) {
-      const svgData = svg.outerHTML;
-      //console.log('SVG content:', svgData);
-	  
-	  const path = svg.querySelector('path');
-    if (!path) return console.warn('No path found in SVG');
-
-    const dValue = path.getAttribute('d');
-    console.log('Path d:', dValue);
-	  
-	  
-	  
-      const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'canvas.svg';
-      a.click();
-      URL.revokeObjectURL(url);
-    } else {
-      console.warn('SVG with app-canvas not found');
-    }
-  });
-}
-
-
-</script>
-
-</body>
+<script src="https://cdn.jsdelivr.net/gh/javedblch/svg-path-editor@latest/dist--/svg-path-editor/main.df74626633cdb224.js"></script></body>
 </html>
