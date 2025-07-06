@@ -11,6 +11,7 @@
                     <div class="input-block" style="flex-grow:1"  [class.has-error]="invalidSyntax">
                         <label class="opaque">Path</label>
                         <textarea
+                        id="svg-text"
                             [ngModel]="rawPath"
                             (ngModelChange)="reloadPath($event, $event.length > 0)"
                             class="app-input"
